@@ -22,8 +22,8 @@
           />
         </div>
         <div class="px-6 py-4">
-          <div class="font-bold text-xs sm:text-base md:text-xl mb-2">Card Title</div>
-          <p class="text-gray-700 text-xs sm:text-base md:text-xl ">
+          <div class="font-bold text-sm  sm:text-base md:text-sm mb-2">Card Title</div>
+          <p class="text-gray-700 text-sm   ">
         ID: {{ student.nipd }} / {{ student.nama_rombel }}<br>
         Nama :  {{ student.nama }}
       </p>

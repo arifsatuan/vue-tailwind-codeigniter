@@ -1,5 +1,5 @@
 <template>
-    <div class="hero-container mt-20">
+    <div class="hero-container mt-20 bg-blue-700">
       <h1>Welcome to Our Site!</h1>
       <p>Explore our services and products.</p>
     </div>
@@ -14,7 +14,7 @@
   <style scoped>
   .hero-container {
     color: #fff; /* Adjust text color as needed */
-    background-color: #0099ff; /* Base background color */
+   
     padding: 50px 20px;
     position: relative;
     /* SVG Background */

@@ -1,38 +1,63 @@
 <template>
-    <div class="smaga-news-container bg-white p-5">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <!-- Featured News Post on the Left -->
-        <div class="featured-post bg-transparent p-4">
-          <div class="flex flex-col">
-            <img :src="posts[0].imgpost" alt="Featured Post" class="w-full h-64 object-cover mb-4 rounded-lg">
-            <div class="text-gray-900">
-              <h3 class="text-2xl font-bold mb-2">{{ posts[0].title }}</h3>
-              <p class="mb-2">{{ posts[0].date }}</p>
-              <p>{{ posts[0].post.substring(0, 200) }}...</p>
-            </div>
+  <div class="lapsat-news-container bg-blue-700 p-5">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <!-- Featured News Post on the Left -->
+      <div class="featured-post bg-transparent p-4">
+        <div class="flex flex-col">
+          <img :src="posts[0].imgpost" alt="Featured Post" class="w-full h-64 object-cover mb-4 rounded-lg">
+          <div class="text-gray-200">
+            <h3 class="text-2xl font-bold mb-2">{{ posts[0].title }}</h3>
+            <p class="mb-2">{{ posts[0].date }}</p>
+            <p>{{ posts[0].post.substring(0, 200) }}...</p>
           </div>
         </div>
-        
-        <!-- Other News Posts on the Right -->
-        <div class="news-posts space-y-4">
-          <div v-for="(post, index) in posts.slice(1)" :key="post.slug" class="news-post flex bg-transparent p-4">
-            <img :src="post.imgpost" alt="News Post" class="w-1/3 h-24 object-cover mr-4 rounded-lg">
-            <div class="text-gray-900">
+      </div>
+
+      <!-- Other News Posts on the Right -->
+      <div class="news-posts space-y-4">
+        <div v-for="(post, index) in posts.slice(1)" :key="post.slug" class="news-post flex bg-transparent p-4">
+          -<img :src="post.imgpost" alt="News Post" class="w-1/3 h-24 object-cover mr-4 rounded-lg">
+            <div class="text-gray-100">
               <h3 class="text-lg font-bold mb-1">{{ post.title }}</h3>
               <p class="text-sm mb-1">{{ post.date }}</p>
               <p class="text-sm">{{ post.post.substring(0, 200) }}...</p>
             </div>
-          </div>
+<!--
+          <article class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+            <img alt=""
+              src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+              class="absolute inset-0 w-full object-cover" />
+
+            <div class="relative bg-gradient-to-t from-gray-700/100 to-gray-900/0 pt-16 sm:pt-16 lg:pt-16">
+              <div class="p-4 sm:p-6">
+                <time datetime="2022-10-10" class="block text-xs text-white/90"> 10th Oct 2022 </time>
+
+                <a href="#">
+                  <h3 class="mt-0.5 text-lg text-white">How to position your furniture for positivity</h3>
+                </a>
+
+                <p class="mt-2 line-clamp-3 text-sm/relaxed text-white/95">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus
+                  pariatur animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet corporis
+                  quidem, mollitia itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius
+                  atque dignissimos. Molestias explicabo corporis voluptatem?
+                </p>
+              </div>
+            </div>
+          </article>
+
+          -->
         </div>
       </div>
     </div>
-  </template>
-  <script>
-  export default {
-    name: 'PostGrid',
-    data() {
-      return {
-        posts: [
+  </div>
+</template>
+<script>
+export default {
+  name: 'PostGrid',
+  data() {
+    return {
+      posts: [
         {
           slug: "post-1",
           title: "Post One",
@@ -62,18 +87,24 @@
           imgpost: "https://source.unsplash.com/random/200x200?sig=6",
           date: "March 6, 2024"
         }
-          // Your dummy data array of posts
-        ]
-      };
-    },
-    created() {
-      // Fetch the real posts when you're ready
-    },
-    // Methods, etc.
-  };
-  </script>
+        // Your dummy data array of posts
+      ]
+    };
+  },
+  created() {
+    // Fetch the real posts when you're ready
+  },
+  // Methods, etc.
+};
+</script>
   
-  <style scoped>
-  /* Your styling here */
-  </style>
+<style scoped>
+.lapsat-news-container {
+  /* Assuming your build setup allows you to resolve paths from the public folder */
+  background-image: url('@/assets/pattern.png');
+  background-size: 100% auto;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+</style> 
   

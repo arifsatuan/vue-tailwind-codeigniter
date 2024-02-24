@@ -1,8 +1,9 @@
 <template>
   <div class="home">
-    <HeroComponent />
+    <HeroComponent/>
     <PostGrid/>
-   <Cards msg="Welcome to Your Vue.js App"/>
+    <InstagramFeed/>
+ <Cards msg="Welcome to Your Vue.js App"/>
     
   </div>
 </template>
@@ -12,13 +13,14 @@
 import Cards from '@/components/CardsComponent.vue'
 import HeroComponent from '@/components/HeroComponent.vue'
 import PostGrid from '@/components/PostGrid.vue';
-import PostsGrid from '@/components/PostGrid.vue'
-
+import InstagramFeed from '@/components/InstagramFeedComponent.vue';
 export default {
   name: 'HomeView',
   components: {
-    Cards, HeroComponent,
-    PostGrid
+    Cards,
+    HeroComponent,
+    PostGrid,
+    InstagramFeed
 }
 }
 </script>

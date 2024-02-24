@@ -17,6 +17,9 @@ dependencies:
   vue-router:
     specifier: ^4.0.3
     version: 4.3.0(vue@3.4.19)
+  vue3-instagram-feed:
+    specifier: ^0.1.4
+    version: 0.1.4
 
 devDependencies:
   '@vue/cli-plugin-babel':
@@ -2416,6 +2419,15 @@ packages:
       postcss: 8.4.35
       postcss-value-parser: 4.2.0
     dev: true
+
+  /axios@0.27.2:
+    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
+    dependencies:
+      follow-redirects: 1.15.5(debug@4.3.4)
+      form-data: 4.0.0
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /axios@1.6.7:
     resolution: {integrity: sha512-/hDJGff6/c7u0hDkvkGxR/oy6CbCs8ziCsC7SqmhjfozqiJGc8Z11wrv9z9lYfY4K8l+H9TpjcMDX0xOZmx+RA==}
@@ -6546,6 +6558,16 @@ packages:
   /vue-template-es2015-compiler@1.9.1:
     resolution: {integrity: sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==}
     dev: true
+
+  /vue3-instagram-feed@0.1.4:
+    resolution: {integrity: sha512-AxDMYoEnPMN1G6BgvM3WJA48hM+AUgIOKZIbsJP/Vv1nehkmpKBrfANN6jFjMJnBZgFPOwNitQYwLRqmISyVRw==}
+    dependencies:
+      axios: 0.27.2
+      vue: 3.4.19
+    transitivePeerDependencies:
+      - debug
+      - typescript
+    dev: false
 
   /vue@3.4.19:
     resolution: {integrity: sha512-W/7Fc9KUkajFU8dBeDluM4sRGc/aa4YJnOYck8dkjgZoXtVsn3OeTGni66FV1l3+nvPA7VBFYtPioaGKUmEADw==}
