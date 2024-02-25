@@ -13,15 +13,15 @@
           class="bg-gray-200 relative w-full overflow-hidden"
           style="padding-top: 100%"
         >
-          <!-- :src="`https://source.unsplash.com/random/50x50?sig=${n}`" --><img
+          <!-- :src="`https://source.unsplash.com/random/50x50?sig=${n}`" -->
+          <img
             class="absolute top-0 left-0 w-full h-full object-cover"
-           
             :src="`img/webp/${index + 1}.webp`" rel="preload" as="image" 
             alt="Image student" loading="lazy" 
             @load="handleImageLoad($event)"
           />
         </div>
-        <div class="px-6 py-4">
+        <div class="px-2 py-2">
           <div class="font-bold text-sm  sm:text-base md:text-sm mb-2">Card Title</div>
           <p class="text-gray-700 text-sm   ">
         ID: {{ student.nipd }} / {{ student.nama_rombel }}<br>

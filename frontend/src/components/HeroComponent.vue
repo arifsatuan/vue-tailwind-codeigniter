@@ -1,8 +1,9 @@
 <template>
-    <div class="hero-container mt-20 bg-blue-700">
+    <div class="hero-container mt-20 text-white bg-gray-900">
       <h1>Welcome to Our Site!</h1>
       <p>Explore our services and products.</p>
     </div>
+    <div class="spacer layer1"></div>
   </template>
   
   <script>
@@ -12,16 +13,29 @@
   </script>
   
   <style scoped>
-  .hero-container {
-    color: #fff; /* Adjust text color as needed */
-   
-    padding: 50px 20px;
-    position: relative;
-    /* SVG Background */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230099ff" fill-opacity="1" d="M0,96L60,85.3C120,75,240,53,360,42.7C480,32,600,32,720,58.7C840,85,960,139,1080,144C1200,149,1320,107,1380,85.3L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>');
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 100% auto;
-  }
+  .spacer {
+  width: 100%;
+  height: 0; /* Initially set to 0 to remove space */
+  padding-bottom: calc(100% * (13 / 96)); /* This will maintain the aspect ratio of the SVG */
+  background-image: url('@/assets/wave.svg');
+  background-repeat: no-repeat;
+  background-position: center bottom; /* Adjust to 'center top' if the wave should be at the top */
+  background-size: 100% auto;
+  display: block;
+}
+
+.layer1 {
+  /* If you need any additional styles for .layer1, add them here */
+}
+
+.hero-container {
+  display: block; /* 'display: relative;' is not valid. You likely mean 'position: relative;' */
+  padding: 50px 20px;
+  position: relative;
+  /* Make sure there's no additional margin causing space */
+}
+
+
+
   </style>
   

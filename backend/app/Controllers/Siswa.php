@@ -13,8 +13,10 @@ class Siswa extends ResourceController
     public function index()
     {
         $data = $this->model
-        ->select('nipd, nama, nama_rombel')
+        ->select('nipd, nama, nama_rombel,tanggal_lahir')
         ->where('is_active', 1)
+        ->orderBy('nama_rombel', 'asc') // Order by 'nama_rombel' first
+        ->orderBy('nama', 'asc') // Then, within each 'nama_rombel', order by 'nama'
         ->findAll();
         return $this->respond($data);
     }
