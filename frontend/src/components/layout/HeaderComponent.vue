@@ -1,6 +1,7 @@
 <template>
-    <header class="bg-transparent  py-3 absolute w-full top-0 left-0 flex items-center z-[9999]">
-      <div class="container mx-auto">
+  
+   <header class="bg-transparent py-3 absolute w-full top-0 left-0 flex items-center z-[9999]">
+      <div class="container  mx-auto px-4 lg:px-0">
         <div class="flex items-center justify-between relative">
           <div class="px-4">
             <router-link to="/" class="font-bold text-lg text-primary block py-0">
@@ -68,8 +69,18 @@
   </script>
   
   <style scoped>
+ .header-container {
+  
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  }
+  .container{
+    max-width: 1200px;
+  }
   /* Add your styles for navbar-fixed and hamburger lines here */
   .navbar-fixed {
+    
     position: fixed;
     z-index: 9999;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));

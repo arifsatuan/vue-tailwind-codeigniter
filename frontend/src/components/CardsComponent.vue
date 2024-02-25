@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4">
+  <div class="p-4 cardcontainer mx-auto">
     <h1 class="text-2xl font-bold mb-4">{{ msg }}</h1>
     <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-4">
       <!--  <div v-for="n in 6" :key="n" class="max-w-sm rounded overflow-hidden shadow-lg">-->
@@ -114,6 +114,9 @@ export default {
 
 <!-- Tailwind CSS scoped styling -->
 <style scoped>
+.cardcontainer{
+  max-width: 1200px;
+}
 img {
   opacity: 0; /* Make image initially invisible */
   transition: opacity 0.5s ease-in-out; /* Smooth transition for loading effect */

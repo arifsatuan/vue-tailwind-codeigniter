@@ -126,11 +126,14 @@ export default {
   
 <style scoped>
 .lapsat-news-container {
+  max-width: 1200px; /* or any maximum width that suits your design */
+  margin: 0 auto; /* This centers the container if there's space on the sides */
   /* Assuming your build setup allows you to resolve paths from the public folder */
   background-image: url('@/assets/pattern.webp');
   background-size: 100% auto;
   background-position: bottom;
   background-repeat: no-repeat;
+
 }
 </style> 
   
