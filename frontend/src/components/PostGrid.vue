@@ -10,7 +10,7 @@ d<template>
             @load="handleImageLoad($event)" style="opacity: 0;"> <!-- Initial opacity set to 0 -->
           </div>
           <div class="text-gray-200">
-            <h3 class="text-2xl font-bold mb-2">{{ posts[0].title }}</h3>
+            <h2 class="text-2xl font-bold mb-2">{{ posts[0].title }}</h2>
             <p class="mb-2">{{ posts[0].date }}</p>
             <p>{{ posts[0].post.substring(0, 200) }}...</p>
           </div>
