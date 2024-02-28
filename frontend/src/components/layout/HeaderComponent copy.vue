@@ -16,36 +16,30 @@
             <span
               :class="{ 'hamburger-line origin-bottom-left transition duration-300 ease-in-out': true, 'transform -rotate-45': isOpen }"></span>
           </button>
-          <nav :class="{ 'hidden': !isOpen, 'absolute py-3 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none': true }" id="nav-menu" ref="menu">
+          <nav
+            :class="{ 'hidden': !isOpen, 'absolute py-3 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none': true }"
+            id="nav-menu" ref="menu">
             <ul class="block lg:flex">
               <li v-for="item in menuItems" :key="item.name" class="group" :class="{ 'relative': item.submenu }">
-                <div @click="item.submenu ? toggleSubmenu(item) : ''" class="flex items-center cursor-pointer">
-                  <router-link :to="item.path" v-if="!item.submenu" class="text-base text-dark p-2 mx-1 flex group-hover:text-primary hover:bg-blue-700 hover:rounded-lg hover:text-gray-100">
-                    {{ item.name }}
-                  </router-link>
-                  <div v-else class="text-base text-dark p-2 mx-1 flex justify-between items-center group-hover:text-primary hover:bg-blue-700 hover:rounded-lg hover:text-gray-100">
-                    {{ item.name }}
-                    <span v-if="item.submenu && isMobileView" class="lg:hidden"></span>
-                  </div>
+                <router-link :to="item.path"
+                  class="text-base text-dark p-2 mx-1 flex group-hover:text-primary hover:bg-blue-700 hover:rounded-lg hover:text-gray-100"
+                  v-if="!item.submenu">
+                  {{ item.name }}
+                </router-link>
+                <div  v-if="item.submenu" @click="item.submenu ? toggleSubmenu(item) : ''"
+                  class="text-base text-dark p-2 mx-1 flex group-hover:text-primary hover:bg-blue-700 hover:rounded-lg hover:text-gray-100 cursor-pointer">
+                  {{ item.name }}
                 </div>
-                <!-- Desktop Submenu -->
-                <div v-if="item.submenu && item.isOpen && !isMobileView" class="absolute left-0 mt-1 bg-white shadow-lg rounded-lg">
+                <div v-if="item.isOpen && item.submenu" class="absolute left-0 mt-1 bg-white shadow-lg rounded-lg">
                   <ul class="py-1">
                     <li v-for="subitem in item.submenu" :key="subitem.name">
-                      <router-link :to="subitem.path" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-600 hover:rounded-lg hover:text-gray-100">
+                      <router-link :to="subitem.path"
+                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-600 hover:rounded-lg hover:text-gray-100">
                         {{ subitem.name }}
                       </router-link>
                     </li>
                   </ul>
                 </div>
-                <!-- Mobile Submenu, shown as indented list -->
-                <ul v-if="item.submenu && item.isOpen && isMobileView" class="pl-4">
-                  <li v-for="subitem in item.submenu" :key="subitem.name">
-                    <router-link :to="subitem.path" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-600 hover:rounded-lg hover:text-gray-100">
-                      {{ subitem.name }}
-                    </router-link>
-                  </li>
-                </ul>
               </li>
             </ul>
           </nav>
@@ -62,8 +56,6 @@ export default {
     return {
       isOpen: false,
       isTouchDevice: false,
-      isOpen: false,
-          windowWidth: window.innerWidth,
       menuItems: [
         { path: '/', name: 'Home' },
         { path: '/about', name: 'Siswa' },
@@ -83,17 +75,12 @@ export default {
             { path: '/tu', name: 'Tata Usaha' },
             { path: '/dapodik', name: 'Dapodik' },
           ],
-          
+          isOpen: false,
         },
         // More menu items if needed
       ],
     };
   },
-  computed: {
-  isMobileView() {
-    return this.windowWidth <= 768; // Example breakpoint for mobile
-  }
-},
   mounted() {
     this.isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     document.addEventListener('click', this.handleClickOutside, true);
