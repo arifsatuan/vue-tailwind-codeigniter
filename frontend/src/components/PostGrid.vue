@@ -29,31 +29,6 @@ d<template>
               <p class="text-sm mb-1">{{ post.date }}</p>
               <p class="text-sm">{{ post.post.substring(0, 200) }}...</p>
             </div>
-<!--
-          <article class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg">
-            <img alt=""
-              src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
-              class="absolute inset-0 w-full object-cover" />
-
-            <div class="relative bg-gradient-to-t from-gray-700/100 to-gray-900/0 pt-16 sm:pt-16 lg:pt-16">
-              <div class="p-4 sm:p-6">
-                <time datetime="2022-10-10" class="block text-xs text-white/90"> 10th Oct 2022 </time>
-
-                <a href="#">
-                  <h3 class="mt-0.5 text-lg text-white">How to position your furniture for positivity</h3>
-                </a>
-
-                <p class="mt-2 line-clamp-3 text-sm/relaxed text-white/95">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus
-                  pariatur animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet corporis
-                  quidem, mollitia itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius
-                  atque dignissimos. Molestias explicabo corporis voluptatem?
-                </p>
-              </div>
-            </div>
-          </article>
-
-          -->
         </div>
       </div>
     </div>
@@ -95,14 +70,14 @@ export default {
           slug: "post-1",
           title: "Post One",
           post: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ante massa, porttitor eget urna non, facilisis dictum ante. Donec vel commodo mauris. Etiam pharetra erat sem, a sodales lorem elementum ac. Nam dui odio, fringilla id eros non, finibus mattis odio. Nunc nisl sem, lacinia ac nulla ut, egestas mollis velit. Morbi sed nulla sit amet sapien gravida tristique. Praesent et condimentum justo, eget gravida felis. Aenean eros nibh, cursus vel finibus ut, tempus non felis. Ut cursus vestibulum diam sed imperdiet. Phasellus lobortis nulla leo, sed egestas tortor maximus ac. Nunc quis nibh ut turpis hendrerit egestas. Cras suscipit.",
-          imgpost: "https://source.unsplash.com/random/200x200?sig=2",
+          imgpost: "/img/postsimage/post2.webp", 
           date: "March 2, 2024"
         },
         {
           slug: "post-1",
           title: "Post One",
           post: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ante massa, porttitor eget urna non, facilisis dictum ante. Donec vel commodo mauris. Etiam pharetra erat sem, a sodales lorem elementum ac. Nam dui odio, fringilla id eros non, finibus mattis odio. Nunc nisl sem, lacinia ac nulla ut, egestas mollis velit. Morbi sed nulla sit amet sapien gravida tristique. Praesent et condimentum justo, eget gravida felis. Aenean eros nibh, cursus vel finibus ut, tempus non felis. Ut cursus vestibulum diam sed imperdiet. Phasellus lobortis nulla leo, sed egestas tortor maximus ac. Nunc quis nibh ut turpis hendrerit egestas. Cras suscipit.",
-          imgpost: "https://source.unsplash.com/random/200x200?sig=3",
+          imgpost: "/img/postsimage/post3.webp", 
           date: "March 3, 2024"
         },
         // ... Add more posts with different sig values for images
@@ -110,7 +85,7 @@ export default {
           slug: "post-6",
           title: "Post Six",
           post: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ante massa, porttitor eget urna non, facilisis dictum ante. Donec vel commodo mauris. Etiam pharetra erat sem, a sodales lorem elementum ac. Nam dui odio, fringilla id eros non, finibus mattis odio. Nunc nisl sem, lacinia ac nulla ut, egestas mollis velit. Morbi sed nulla sit amet sapien gravida tristique. Praesent et condimentum justo, eget gravida felis. Aenean eros nibh, cursus vel finibus ut, tempus non felis. Ut cursus vestibulum diam sed imperdiet. Phasellus lobortis nulla leo, sed egestas tortor maximus ac. Nunc quis nibh ut turpis hendrerit egestas. Cras suscipit..",
-          imgpost: "https://source.unsplash.com/random/200x200?sig=6",
+          imgpost: "/img/postsimage/post4.webp", 
           date: "March 6, 2024"
         }
         // Your dummy data array of posts
