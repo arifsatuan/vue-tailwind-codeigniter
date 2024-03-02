@@ -72,27 +72,22 @@
 </div>
 </template>
 
-<script> 
-import { useStudentsStore } from '@/stores/siswa';
-
+<script>
+import axiosInstance from '../axiosConfig'; // Adjust the path as necessary
+import { useStudentsStore } from '@/stores/students';
 
 export default {
     name: "TableSiswa",
     data() {
         return {
+            students: [],
             currentPage: 1,
             perPage: 10,
             searchTerm: '', // Add this 
         };
     },
     computed: {
-        students() {
-            //return []; 
-            const store = useStudentsStore();
-            return store.students;
-        },
         filteredStudents() {
-           
             if (!this.searchTerm) {
                 return this.students;
             }
@@ -131,11 +126,18 @@ export default {
     },
 
     mounted() {
-        const store = useStudentsStore(); 
-        store.fetchStudents();
-        
+        this.fetchStudents();
     },
     methods: {
+        fetchStudents() {
+            axiosInstance.get('/siswa')
+                .then(response => {
+                    this.students = response.data;
+                })
+                .catch(error => {
+                    console.error('There was an error fetching the students:', error);
+                });
+        },
         changePage(page) {
             this.currentPage = page;
             // No need to call fetchStudents here if you're using client-side pagination
